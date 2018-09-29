@@ -9,6 +9,7 @@ $slider.slick({
   arrows: false,
   vertical: true,
   dots: true,
+  draggable: true,
   speed: 1200,
   cssEase: 'cubic-bezier(0.86, 0, 0.07, 1)'
 })
