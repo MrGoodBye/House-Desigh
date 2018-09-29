@@ -1,0 +1,54 @@
+// Your customize CSS
+body {
+  overflow: hidden;
+}
+
+.slider {
+  &.slick-dotted.slick-slider {
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+
+  .slide {
+    position: relative;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    font-family: sans-serif;
+    display: block;
+
+    h1 {
+      font-size: 10rem;
+      line-height: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.slick-vertical .slick-slide {
+    background-color: #374a67;
+    border: none;
+
+    &:nth-of-type(even)  {
+      background-color: #64718c;
+    }
+  }
+
+  .slick-dots {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) rotate(90deg);
+    width: auto;
+    bottom: auto;
+
+    li {
+      &.slick-active button:before,
+      button:before {
+        color: white;
+        font-size: 12px;
+      }
+    }
+  }
+}
