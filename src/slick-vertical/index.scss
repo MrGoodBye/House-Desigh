@@ -22,18 +22,9 @@
     }
   }
 
-  &.slick-vertical .slick-slide {
-    background-color: #374a67;
-    border: none;
-
-    &:nth-of-type(even)  {
-      background-color: #64718c;
-    }
-  }
-
   .slick-dots {
     top: 50%;
-    right: 0;
+    right: -60px;
     transform: translateY(-50%) rotate(90deg);
     width: auto;
     bottom: auto;
@@ -41,7 +32,7 @@
     li {
       &.slick-active button:before,
       button:before {
-        color: white;
+        color: #5a5a5a;
         font-size: 12px;
       }
     }

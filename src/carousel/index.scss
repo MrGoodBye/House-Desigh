@@ -7,6 +7,11 @@
   .slick-next {
     right: 25px;
   }
+  .slick-prev, .slick-next {
+    &::before {
+      color: #5a5a5a
+    }
+  }
   .slick-list {
     height: 100%;
     .slick-track {
