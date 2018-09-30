@@ -1,0 +1,36 @@
+.carousel {
+  height: 100%;
+  .slick-prev {
+    left: 25px;
+    z-index: 1000;
+  }
+  .slick-next {
+    right: 25px;
+  }
+  .slick-list {
+    height: 100%;
+    .slick-track {
+      height: 100%;
+      .slick-slide {
+        height: 100%;
+        & > div {
+          height: 100%;
+        }
+        .img-wrapper {
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+          overflow-x: hidden;
+          height: 100%;
+          @media screen and (min-width: 40em) {
+            padding: 0 50px;
+          }
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

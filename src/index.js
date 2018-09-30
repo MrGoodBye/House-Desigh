@@ -1,6 +1,4 @@
-import 'bootstrap'
-import './initial'
-import './slick'
-import './carousel'
-
-import './scss/index.scss'
+// import 'bootstrap'
+import './initial/index'
+import './slick-vertical/index'
+import './carousel/index'

@@ -1,3 +1,5 @@
+import './index.scss'
+
 /* eslint-disable */
 window.isMobile = false //initiate as false
 // device detection

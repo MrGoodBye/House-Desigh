@@ -1,6 +1,7 @@
 import 'slick-carousel/slick/slick'
 import 'slick-carousel/slick/slick.scss'
 import 'slick-carousel/slick/slick-theme.scss'
+import './index.scss'
 
 if (!window.isMobile) {
   console.log('init vertical slider')
