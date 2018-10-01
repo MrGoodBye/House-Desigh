@@ -1,22 +1,26 @@
+@import '../mixin.scss';
 .project-wrapper {
     display: flex !important;
     flex-flow: column nowrap;
     justify-content: center;
     width: 100%;
-    height: 100vh;
-    @media screen and (min-width: 40em) {
+    height: 100%;
+    @include breakpoint(tablet) {
         padding: 0 50px;
+    }
+    @include breakpoint(mobile) {
+        height: 100vh;
     }
     .project-header {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         padding: 0 5px 40px 5px;
         position: relative;
         &::after {
             position: absolute;
             content: "";
-            height: 1px;
+            height: 0;
             left: 5px;
             right: 5px;
             bottom: 20px;
@@ -27,12 +31,13 @@
                 font-size: 22px;
             }
             .subtitle {
+                display: none;
                 color: #c1c1c1;
                 font-size: 14px;
             }
         }
         .right {
-            display: flex;
+            display: none;
             a {
                 display: block;
                 padding: 7px 27px;
@@ -60,17 +65,31 @@
                     color: #C8C8C8;
                 }
                 &:last-child {
-                  padding-right: 0;
-                  &::after {
-                    content: unset;
-                  }
+                    padding-right: 0;
+                    &::after {
+                        content: unset;
+                    }
                 }
                 &:hover {
-                  color: #333;
-                  &::before {
-                    width: 30px;
-                  }
+                    color: #333;
+                    &::before {
+                        width: 30px;
+                    }
                 }
+            }
+        }
+        @include breakpoint(tablet) {
+            justify-content: space-between;
+            &::after {
+                height: 1px;
+            }
+            .left {
+                .subtitle {
+                    display: block
+                }
+            }
+            .right {
+                display: flex;
             }
         }
     }

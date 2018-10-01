@@ -1,3 +1,5 @@
+@import '../mixin.scss';
+
 .carousel {
   width: 100vw;
   .slick-prev {
@@ -28,15 +30,18 @@
           overflow-x: hidden;
           height: 100%;
           width: 100%;
-          @media screen and (min-width: 40em) {
-            padding: 0 50px;
-          }
           img {
             width: 100%;
             height: auto;
           }
         }
       }
+    }
+  }
+  
+  @include breakpoint(tablet) {
+    .img-wrapper {
+      padding: 0 50px;
     }
   }
 }
