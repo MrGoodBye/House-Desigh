@@ -1,6 +1,7 @@
 import './index.scss'
 
-$('.project-container').slick({
+const isMobile = window.isMobile
+!isMobile && $('.project-container').slick({
     infinite: true,
     speed: 300,
     slidesToShow: 4,
