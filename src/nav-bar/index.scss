@@ -8,6 +8,9 @@
     -moz-transition: height 0.5s;
     -ms-transition: height 0.5s;
     transition: height 0.5s;
+    position: fixed;
+    width: 100vw;
+    z-index: 1000;
 }
 
 .custom-wrapper.open {

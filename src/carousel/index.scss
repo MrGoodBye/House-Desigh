@@ -1,5 +1,6 @@
 .carousel {
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   .slick-prev {
     left: 25px;
     z-index: 1000;
@@ -27,6 +28,7 @@
           align-items: center;
           overflow-x: hidden;
           height: 100%;
+          width: 100%;
           @media screen and (min-width: 40em) {
             padding: 0 50px;
           }
