@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    font: 12px Arial, "微软雅黑";
+}
+
 a {
     all: unset;
     cursor: pointer;
@@ -14,6 +18,20 @@ p {
 
 .slick-slide {
     border: none !important;
+}
+
+.slick-vertical>.slick-list>.slick-track>.slick-slide {
+    @include breakpoint(tablet) {
+        height: 100vh !important;
+        overflow: hidden;
+    }
+}
+
+.slide {
+    @include breakpoint(tablet) {
+        height: 100vh;
+        overflow: hidden;
+    }
 }
 
 .common-header {

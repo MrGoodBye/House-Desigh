@@ -1,22 +1,13 @@
 @import '../mixin.scss';
 .project-wrapper {
-    display: flex !important;
-    flex-flow: column nowrap;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    @include breakpoint(tablet) {
-        padding: $slider-padding;
-    }
-    @include breakpoint(mobile) {
-        height: 100vh;
-    }
+    display: block !important;
     .project-header {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 0 5px 40px 5px;
         position: relative;
+        margin-top: 20%;
         &::after {
             position: absolute;
             content: "";
@@ -77,6 +68,10 @@
                 display: flex;
             }
         }
+    }
+    @include breakpoint(mobile) {
+        height: 100vh;
+        padding: $slider-padding;
     }
 }
 
@@ -186,7 +181,7 @@
                 font-size: 14px;
                 transition: all ease-out .3s;
                 position: relative;
-                top: 0;
+                top: 16px;
             }
         }
         @include breakpoint(mobile-horizontal) {
@@ -200,7 +195,7 @@
                     }
                 }
                 .info .subtitle {
-                    top: -16px;
+                    top: 0px;
                     color: #b7b7b7;
                 }
             }
