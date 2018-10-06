@@ -1,0 +1,97 @@
+@import '../mixin.scss';
+.news {
+    padding: 0 1em;
+    background-color: #f8f8f8;
+    .news-item-wrapper {
+        .news-item {
+            margin-bottom: 3em;
+            img {
+                display: none;
+            }
+            .date {
+                font-family: HELVETICANEUELTPRO-THEX;
+                color: #C0C0C0;
+                margin-bottom: 0;
+                padding-left: 0;
+                font-size: 20px;
+                height: 32px;
+            }
+            .title {
+                width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 16px;
+                color: #666;
+                line-height: 30px;
+            }
+            .description {
+                color: #999;
+                line-height: 25px;
+                font-size: 13px;
+            }
+        }
+    }
+    @include breakpoint(tablet) {
+        height: 100vh;
+        padding: $slider-padding;
+        .news-item-wrapper {
+            .news-item {
+                overflow: hidden;
+                &:last-child {
+                    margin-right: 0;
+                }
+                &>* {
+                    transition: all 0.3s ease-out 0s;
+                    max-width: 320px;
+                    overflow: hidden;
+                }
+                img {
+                    display: block;
+                }
+                .date {
+                    position: relative;
+                    &::before {
+                        font-family: 'IcoFont' !important;
+                        content: "\ea94";
+                        position: absolute;
+                        top: 4px;
+                        right: 0;
+                        font-size: 32px;
+                        width: 48px;
+                        height: 24px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-left: 1px solid #C0C0C0;
+                        transition: opacity 0.3s ease-out 0s;
+                        opacity: 0;
+                    }
+                }
+                .title {
+                    margin: 40px 0 15px 0;
+                }
+                .description {
+                    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+                    margin-left: 0;
+                }
+                &:hover {
+                    .date {
+                        padding-left: 22px;
+                        color: #333;
+                        &::before {
+                            opacity: 1;
+                        }
+                    }
+                    .title {
+                        margin-left: 10px;
+                    }
+                    .description {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+}

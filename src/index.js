@@ -7,4 +7,5 @@ import './project/index'
 import './about/index'
 import './service/index'
 import './video/index'
+import './news/index'
 
