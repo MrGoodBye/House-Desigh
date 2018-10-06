@@ -1,0 +1,109 @@
+@import '../mixin.scss';
+.video {
+    .video-item-wrapper {
+        display: flex;
+        align-items: center;
+        .video-item {
+            .item-info-wrapper {
+                .item_info {
+                    padding: 15px 0;
+                    color: #7d7d7d;
+                    font-size: 14px;
+                    p {
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                    }
+                    .title {
+                        margin-top: 10px;
+                        margin-bottom: 0;
+                    }
+                    .subtitle {
+                        margin-top: 6px;
+                    }
+                }
+            }
+        }
+    }
+    @include breakpoint(tablet) {
+        height: 100vh;
+        padding: $slider-padding;
+        .video-item-wrapper {
+            display: flex;
+            .video-item {
+                display: block !important;
+                padding: 0 5px;
+                .image-wrapper {
+                    display: block;
+                    overflow: hidden;
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        font-family: 'IcoFont' !important;
+                        content: "\eca7";
+                        font-size: 56px;
+                        color: #fff;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        opacity: 0;
+                        z-index: 2;
+                        transition: opacity 0.6s ease 0s;
+                    }
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        background: rgba(0, 0, 0, 0.47);
+                        opacity: 0;
+                        z-index: 1;
+                        transition: opacity 0.6s ease 0s;
+                    }
+                }
+                .item-info-wrapper {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    &>* {
+                        transition: all 0.6s ease 0s;
+                    }
+                    .arrow {
+                        position: relative;
+                        right: -32px;
+                        opacity: 0;
+                        &::before {
+                            font-size: 48px;
+                            color: #7d7d7d;
+                            font-family: 'IcoFont' !important;
+                            content: "\ea94";
+                        }
+                    }
+                }
+                &:hover {
+                    .image-wrapper {
+                        &::before,
+                        &::after {
+                            opacity: 1;
+                        }
+                    }
+                    .item-info-wrapper {
+                        .item_info {
+                            padding-left: 10px;
+                            p {
+                                max-width: 80%;
+                            }
+                        }
+                        .arrow {
+                            right: 16px;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

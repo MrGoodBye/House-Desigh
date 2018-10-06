@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     @include breakpoint(tablet) {
-        padding: 0 50px;
+        padding: $slider-padding;
     }
     @include breakpoint(mobile) {
         height: 100vh;
@@ -25,16 +25,6 @@
             right: 5px;
             bottom: 20px;
             background: rgba(0, 0, 0, .08);
-        }
-        .left {
-            .title {
-                font-size: 22px;
-            }
-            .subtitle {
-                display: none;
-                color: #c1c1c1;
-                font-size: 14px;
-            }
         }
         .right {
             display: none;
@@ -82,11 +72,6 @@
             justify-content: space-between;
             &::after {
                 height: 1px;
-            }
-            .left {
-                .subtitle {
-                    display: block
-                }
             }
             .right {
                 display: flex;

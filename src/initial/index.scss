@@ -1,7 +1,66 @@
+@import '../mixin.scss';
 * {
     box-sizing: border-box;
 }
 
+a {
+    all: unset;
+    cursor: pointer;
+}
+
 .slick-slide {
     border: none !important;
+}
+
+.common-header {
+    margin-top: 3.1em;
+    padding-bottom: 40px;
+    text-align: center;
+    .title {
+        font-size: 22px;
+        color: #444;
+        font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
+    }
+    .subtitle {
+        display: none;
+        font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
+        margin-top: 5px;
+        font-size: 14px;
+        color: #c1c1c1;
+    }
+    @include breakpoint(tablet) {
+        margin-top: 6%;
+        margin-bottom: 50px;
+        text-align: left;
+        .subtitle {
+            display: block;
+            color: #c1c1c1;
+            font-size: 14px;
+        }
+    }
+}
+
+.common-arrow .slick-arrow {
+    font-size: 32px;
+    display: block;
+    font-weight: 700;
+    color: #777;
+    @include breakpoint(tablet) {
+        font-size: 48px;
+        display: block;
+        position: relative;
+        &::before,
+        &::after {
+            transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+        }
+        &::before {
+            transform: translateY(0);
+        }
+        &.iconfont-thin-left::after {
+            content: "\eac9"
+        }
+        &::after {
+            transform: translateY(100%);
+        }
+    }
 }

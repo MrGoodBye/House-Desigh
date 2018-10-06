@@ -5,4 +5,6 @@ import './carousel/index'
 import './nav-bar/index'
 import './project/index'
 import './about/index'
+import './service/index'
+import './video/index'
 

@@ -1,0 +1,94 @@
+@import '../mixin.scss';
+.service {
+    display: flex !important;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    background-color: #f8f8f8;
+    .service-header {
+        text-align: center;
+        .title {
+            font-size: 22px;
+            color: #444;
+            font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
+        }
+        .subtitle {
+            font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
+            margin-top: 5px;
+            font-size: 14px;
+            color: #c1c1c1;
+        }
+    }
+    .service-item-wrapper {
+        display: flex;
+        align-items: center;
+        .service-item {
+            width: 100vw;
+            img {
+                width: inherit;
+            }
+            .service_info {
+                margin-top: 25px;
+                padding: 0 25px;
+                overflow: hidden;
+                position: relative;
+                .title {
+                    font-size: 18px;
+                    color: #333;
+                    margin-bottom: 30px;
+                    height: 40px;
+                    line-height: 40px;
+                    transition: all ease-out .2s;
+                    text-align: center;
+                }
+                .description {
+                    line-height: 28px;
+                    color: #848484;
+                    font-size: 13px;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+    @include breakpoint(tablet) {
+        height: 100vh;
+        padding: 0 60px;
+        background-position: center top !important;
+        background-attachment: initial;
+        background-image: url(http://resources.jsmo.xin/templates/upload/1836/201703/1488877047287.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        .service-header {
+            margin-bottom: 50px;
+            text-align: left;
+        }
+        .service-item-wrapper {
+            .service-item {
+                width: 360px;
+                padding-top: 20px;
+                transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+                position: relative;
+                top: 0;
+                .service_info {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 30px;
+                        height: 1px;
+                        background: rgba(0, 0, 0, .2);
+                        top: 60px;
+                        left: 50%;
+                        transform: translate(-50%);
+                        transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+                    }
+                }
+                &:hover {
+                    top: -20px;
+                    .service_info::before {
+                        width: 80px;
+                        background: rgba(0, 0, 0, .4);
+                    }
+                }
+            }
+        }
+    }
+}

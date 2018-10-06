@@ -41,7 +41,7 @@
   
   @include breakpoint(tablet) {
     .img-wrapper {
-      padding: 0 50px;
+      padding: $slider-padding;
     }
   }
 }
