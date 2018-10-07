@@ -9,4 +9,5 @@ import './service/index'
 import './video/index'
 import './news/index'
 import './team/index'
+import './partner/index'
 

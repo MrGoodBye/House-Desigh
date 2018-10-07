@@ -83,6 +83,9 @@
             height: inherit;
             display: flex;
             align-items: center;
+            .slick-slide {
+                padding: 0 5px;
+            }
         }
     }
     &>.slick-dots {
@@ -139,9 +142,6 @@
         }
     }
     .project-item {
-        display: flex !important;
-        padding: 0 5px;
-        flex-flow: column nowrap;
         .img-wrapper {
             overflow: hidden;
             position: relative;
@@ -162,7 +162,6 @@
             }
         }
         .info {
-            padding: 0 20px;
             .title {
                 color: #565656;
                 text-align: left;
@@ -170,34 +169,21 @@
                 overflow: hidden;
                 white-space: nowrap;
                 font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
+                font-size: 16px;
+                padding: 20px 0;
+                text-align: center;
             }
             .subtitle {
                 color: #929292;
                 text-align: left;
                 text-overflow: ellipsis;
-                overflow: hidden;
                 white-space: nowrap;
                 font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
                 font-size: 14px;
                 transition: all ease-out .3s;
                 position: relative;
                 top: 16px;
-            }
-        }
-        @include breakpoint(mobile-horizontal) {
-            &:hover {
-                .img-wrapper {
-                    &::after {
-                        background: rgba(255, 255, 255, .3);
-                    }
-                    img {
-                        transform: scale(1.2, 1.2);
-                    }
-                }
-                .info .subtitle {
-                    top: 0px;
-                    color: #b7b7b7;
-                }
+                display: none;
             }
         }
     }

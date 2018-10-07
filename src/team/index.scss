@@ -1,8 +1,57 @@
 @import '../mixin.scss';
 .team {
-    padding: 0 1em;
+    padding: 0 3em;
     &>img {
         display: none;
+    }
+    .team-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .team-item-wrapper {
+            transition: all 0.3s ease-out 0s;
+            .team-item {
+                display: flex;
+                justify-content: space-between;
+                transition: all 0.3s ease-out 0s;
+                overflow: hidden;
+                padding-bottom: 30px;
+                img {
+                    margin: 0;
+                    width: 80px;
+                    height: 80px;
+                    position: relative;
+                    display: block;
+                }
+                .summary {
+                    background: #fff;
+                    padding: 0 20px;
+                    margin-top: 0;
+                    position: relative;
+                    z-index: 2;
+                    height: 80px;
+                    overflow: hidden;
+                    .title {
+                        color: #383838;
+                        font-size: 15px;
+                        font-family: "HELVETICANEUELTPRO-THEX";
+                        margin-bottom: 6px;
+                    }
+                    .subtitle {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        color: #a5a5a5;
+                        font-size: 12px;
+                        margin-bottom: 6px;
+                    }
+                    .description {
+                        font-size: 13px;
+                        color: #949494;
+                    }
+                }
+            }
+        }
     }
     @include breakpoint(tablet) {
         height: 100vh;
@@ -20,48 +69,35 @@
         .team-wrapper {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             .team-item-wrapper {
                 transition: all 0.3s ease-out 0s;
                 .team-item {
                     display: block;
                     width: 320px;
                     transition: all 0.3s ease-out 0s;
-                    overflow: hidden;
                     img {
-                        margin: 0;
-                        position: relative;
-                        display: block;
+                        width: initial;
+                        height: initial;
                         transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
                     }
                     .summary {
-                        background: #fff;
-                        padding: 33px 20px 0 20px;
+                        padding-top: 30px;
                         transition: all 0.3s ease-out 0s;
-                        margin-top: 0;
-                        position: relative;
-                        z-index: 2;
+                        height: auto;
                         .title {
-                            color: #383838;
                             font-size: 20px;
-                            font-family: "HELVETICANEUELTPRO-THEX";
-                            margin-bottom: 6px;
                             transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
                         }
                         .subtitle {
-                            overflow: hidden;
-                            white-space: nowrap;
-                            text-overflow: ellipsis;
-                            color: #a5a5a5;
-                            font-size: 12px;
                             margin-bottom: 20px;
                         }
                         .description {
-                            height: 0;
-                            overflow: hidden;
-                            transition: all 0.3s ease-out 0s;
-                            font-size: 13px;
                             color: #fff;
+                            overflow: hidden;
+                            height: 0;
                             line-height: 24px;
+                            transition: all 0.3s ease-out 0s;
                         }
                     }
                     &:hover {

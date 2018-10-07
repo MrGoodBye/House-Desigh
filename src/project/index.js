@@ -1,4 +1,5 @@
 import './index.scss'
+import './responsive.scss'
 
 const isMobile = window.isMobile
 !isMobile && $('.project-container').slick({

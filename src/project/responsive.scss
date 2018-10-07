@@ -1,0 +1,33 @@
+@import '../mixin.scss';
+.project-container {
+    @include breakpoint(tablet) {
+        .project-item {
+            .img-wrapper {
+                img {}
+            }
+            .info {
+                padding-right: 20px;
+                .title {
+                    text-align: left;
+                }
+                .subtitle {
+                    display: block;
+                }
+            }
+            &:hover {
+                .img-wrapper {
+                    &::after {
+                        background: rgba(255, 255, 255, .3);
+                    }
+                    img {
+                        transform: scale(1.2, 1.2);
+                    }
+                }
+                .info .subtitle {
+                    top: 0px;
+                    color: #b7b7b7;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import '../mixin.scss';
+.partner {
+    @include breakpoint(tablet) {
+        padding: $slider-padding;
+        .item-wrapper {
+            .item {
+                position: relative;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 1px;
+                    height: 90px;
+                    background-color: #eaeaea;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
