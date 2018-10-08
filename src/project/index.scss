@@ -7,7 +7,6 @@
         align-items: center;
         padding: 0 5px 40px 5px;
         position: relative;
-        margin-top: 20%;
         &::after {
             position: absolute;
             content: "";
@@ -142,6 +141,7 @@
         }
     }
     .project-item {
+        display: block !important;
         .img-wrapper {
             overflow: hidden;
             position: relative;
