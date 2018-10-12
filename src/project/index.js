@@ -36,3 +36,10 @@ const isMobile = window.isMobile
         // instead of a settings object
     ]
 })
+
+$('.project-container .project-item').each(function(index, elem) {
+    elem.dataset.aos = {
+        animate: 'fadeUp',
+        delay: index * 100
+    }
+})

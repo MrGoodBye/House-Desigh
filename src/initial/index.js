@@ -13,6 +13,10 @@ if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elain
 }
 /* eslint-enable */
 
-AOS.init({
-    once: true
+$(function () {
+
+    AOS.init({
+        duration: 200,
+        once: true
+    })
 })

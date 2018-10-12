@@ -3,9 +3,9 @@ import 'slick-carousel/slick/slick.scss'
 import 'slick-carousel/slick/slick-theme.scss'
 import './index.scss'
 
+const $slider = $('.slider')
 if (!window.isMobile) {
   console.log('init vertical slider')
-  const $slider = $('.slider')
 
   $slider.slick({
     infinite: false,
@@ -38,3 +38,8 @@ if (!window.isMobile) {
     $(this).find('.slick-current .slide .aos-init').addClass('aos-animate')
   })
 }
+
+// fade animation of each slide, to be confirm
+// $('.slider .slide').each(function (index, elem) {
+//   if(index) elem.dataset.aos = 'fadeUp'
+// })

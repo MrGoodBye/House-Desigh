@@ -1,6 +1,5 @@
 import './index.scss'
 
-
 const isMobile = window.isMobile
 $('.video-item-wrapper').slick({
     infinite: true,
@@ -32,4 +31,9 @@ $('.video-item-wrapper').slick({
             }
         }
     ]
+})
+
+$('.video-item-wrapper .video-item').each(function(index, elem) {
+    $(elem).data('aos', isMobile ? 'fade-in' : 'fade-up')
+    console.log($(elem).data())
 })
