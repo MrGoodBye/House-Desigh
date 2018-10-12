@@ -24,9 +24,8 @@ const config = {
         loader: 'babel-loader',
       },
       {
-        test: /\.scss$/,
-        use: IS_DEV
-          ? [
+        test: /(\.scss$)|(\.css$)/,
+        use: [
             'style-loader',
             {
               loader: 'css-loader',
@@ -40,11 +39,7 @@ const config = {
                 sourceMap: true,
               },
             },
-          ]
-          : ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader'],
-          }),
+          ],
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
@@ -114,7 +109,11 @@ const config = {
         removeComments: true,
       },
     }),
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin({
+			filename: "style.css",
+			disable: false,
+			allChunks: true
+		}),
     new webpack.HashedModuleIdsPlugin(),
   ],
   optimization: {
@@ -134,12 +133,12 @@ const config = {
   },
 };
 
-if (!IS_DEV) {
-  config.optimization.minimizer.push(
-    new UglifyJsPlugin({
-      sourceMap: false,
-    })
-  );
-}
+// if (!IS_DEV) {
+//   config.optimization.minimizer.push(
+//     new UglifyJsPlugin({
+//       sourceMap: false,
+//     })
+//   );
+// }
 
 module.exports = config;
