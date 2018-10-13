@@ -51,3 +51,8 @@
   **/
 
 $slider-padding: 0 50px;
+@mixin text-dot() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
