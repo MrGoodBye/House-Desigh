@@ -5,8 +5,8 @@ const isMobile = window.isMobile
 const $projectContainer = $('.project-container')
 const images = window.importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/))
 $projectContainer.html(() => {
-    return images.map((image, i) => (
-        `<a 
+    return images.map((image, i) => (`
+        <a 
             class="project-item"
             data-aos=${isMobile ? "fade-in" : "fade-up"}
             data-aos-delay=${i * 100}
@@ -20,8 +20,8 @@ $projectContainer.html(() => {
             <p class="title">太阳之屋/ Keivani Architects</p>
             <p class="subtitle">室内设计</p>
             </div>
-        </a>`
-    ))
+        </a>
+    `))
 })
 !isMobile && $projectContainer.slick({
     infinite: true,

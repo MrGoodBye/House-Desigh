@@ -36,8 +36,3 @@ if (!window.isMobile) {
     $(this).find('.slick-current .slide .aos-init').addClass('aos-animate')
   })
 }
-
-// fade animation of each slide, to be confirm
-// $('.slider .slide').each(function (index, elem) {
-//   if(index) elem.dataset.aos = 'fadeUp'
-// })
