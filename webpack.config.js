@@ -24,42 +24,50 @@ const config = {
         loader: 'babel-loader',
       },
       {
-        test: /(\.scss$)|(\.css$)/,
+        test: /\.(scss|css)$/,
         use: [
-            'style-loader',
-            {
-              loader: 'css-loader',
-              options: {
-                sourceMap: true,
-              },
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
             },
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: true,
-              },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
             },
-          ],
+          },
+        ],
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              name: 'public/[name].[ext]?[hash:7]',
-            },
-          },
+          'file-loader',
           {
             loader: 'image-webpack-loader',
             options: {
-              bypassOnDebug: true,
               mozjpeg: {
                 progressive: true,
-                quality: 75,
+                quality: 65
               },
-            },
+              // optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: true,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              // the webp option will enable WEBP
+              webp: {
+                quality: 75
+              }
+            }
           },
         ],
       },
@@ -110,10 +118,10 @@ const config = {
       },
     }),
     new ExtractTextPlugin({
-			filename: "style.css",
-			disable: false,
-			allChunks: true
-		}),
+      filename: "style.css",
+      disable: false,
+      allChunks: true
+    }),
     new webpack.HashedModuleIdsPlugin(),
   ],
   optimization: {
