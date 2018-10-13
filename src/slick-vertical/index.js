@@ -32,9 +32,7 @@ if (!window.isMobile) {
     }
   })
   $slider.on('afterChange', function(event, $slick, direction){
-    $(this).find('.slick-current .slide').removeClass('aos-animate')
     $(this).find('.aos-init').removeClass('aos-animate')
-    $(this).find('.slick-current .slide').addClass('aos-animate')
     $(this).find('.slick-current .slide .aos-init').addClass('aos-animate')
   })
 }

@@ -23,7 +23,6 @@ import './index.scss'
             toggleHorizontal();
         }
         menu.classList.toggle('open');
-        document.getElementById('toggle').classList.toggle('x');
     };
 
     function closeMenu() {
@@ -39,3 +38,20 @@ import './index.scss'
 
     window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
 })(window, window.document);
+
+$('.custom-toggle').hover(function () {
+    if (!$(this).hasClass('x')) $(this).addClass('x')
+}, function () {
+    if (!$('.custom-wrapper').hasClass('open')) $(this).removeClass('x')
+})
+$('.pure-menu-heading').click(function () {
+    if ($('.slider').slick) {
+        $('.slider').slick('slickGoTo', 0)
+    }
+})
+$('.pure-menu-link').click(function () {
+    const slideIndex = $(this).data('slide')
+    if ($('.slider').slick) {
+        $('.slider').slick('slickGoTo', slideIndex)
+    }
+})
