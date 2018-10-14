@@ -82,12 +82,22 @@ const config = {
         }]
       },
       {
+        test: /\.mp4/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            mimtetype: 'video/mp4',
+          }
+        }
+      },
+      {
         test: /\.html$/,
         use: [
           {
             loader: 'html-loader',
             options: {
-              attrs: [':data-src'],
+              attrs: [':video:src', ':data-src'],
               minimize: true,
             },
           },
