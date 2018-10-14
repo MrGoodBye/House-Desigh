@@ -53,7 +53,6 @@ p {
     }
     @include breakpoint(tablet) {
         margin-top: 6%;
-        margin-bottom: 50px;
         text-align: left;
         .subtitle {
             display: block;

@@ -39,7 +39,7 @@ import './index.scss'
     window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
 })(window, window.document);
 
-$('.custom-toggle').hover(function () {
+!window.isMobile && $('.custom-toggle').hover(function () {
     if (!$(this).hasClass('x')) $(this).addClass('x')
 }, function () {
     if (!$('.custom-wrapper').hasClass('open')) $(this).removeClass('x')
