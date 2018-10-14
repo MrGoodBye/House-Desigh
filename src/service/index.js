@@ -9,6 +9,7 @@ $serviceContainer.html(() => images.map((image, i) => `
         class="service-item"
         data-aos=${isMobile ? "fade-in" : "fade-up"}
         data-aos-delay=${i * 100}
+        data-aos-once=${isMobile}
     >
         <img src=${image} alt=${CONSTS[i].title}>
         <div class="service_info">

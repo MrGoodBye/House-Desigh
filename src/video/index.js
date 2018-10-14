@@ -10,6 +10,7 @@ $videoContainer.html(() => images.map((image, i) => `
         class="video-item"
         data-aos=${isMobile ? "fade-in" : "fade-up"}
         data-aos-delay=${i * 100}
+        data-aos-once=${isMobile}
     >
         <a class="image-wrapper" href=${video} target="_blank">
             <img src=${image} alt=${CONSTS[i].title}>
