@@ -4,51 +4,46 @@
     &>img {
         display: none;
     }
-    .team-wrapper {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        .team-item-wrapper {
+    .team-item-wrapper {
+        transition: all 0.3s ease-out 0s;
+        .team-item {
+            display: flex;
+            justify-content: space-between;
             transition: all 0.3s ease-out 0s;
-            .team-item {
-                display: flex;
-                justify-content: space-between;
-                transition: all 0.3s ease-out 0s;
+            overflow: hidden;
+            padding-bottom: 30px;
+            img {
+                margin: 0;
+                width: 80px;
+                height: 80px;
+                position: relative;
+                display: block;
+            }
+            .summary {
+                background: #fff;
+                padding: 0 20px;
+                margin-top: 0;
+                position: relative;
+                z-index: 2;
+                height: 80px;
                 overflow: hidden;
-                padding-bottom: 30px;
-                img {
-                    margin: 0;
-                    width: 80px;
-                    height: 80px;
-                    position: relative;
-                    display: block;
+                .title {
+                    color: #383838;
+                    font-size: 15px;
+                    font-family: "HELVETICANEUELTPRO-THEX";
+                    margin-bottom: 6px;
                 }
-                .summary {
-                    background: #fff;
-                    padding: 0 20px;
-                    margin-top: 0;
-                    position: relative;
-                    z-index: 2;
-                    height: 80px;
+                .subtitle {
                     overflow: hidden;
-                    .title {
-                        color: #383838;
-                        font-size: 15px;
-                        font-family: "HELVETICANEUELTPRO-THEX";
-                        margin-bottom: 6px;
-                    }
-                    .subtitle {
-                        overflow: hidden;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        color: #a5a5a5;
-                        font-size: 12px;
-                        margin-bottom: 6px;
-                    }
-                    .description {
-                        font-size: 13px;
-                        color: #949494;
-                    }
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    color: #a5a5a5;
+                    font-size: 12px;
+                    margin-bottom: 6px;
+                }
+                .description {
+                    font-size: 13px;
+                    color: #949494;
                 }
             }
         }
@@ -66,57 +61,56 @@
             bottom: 0;
             height: 100vh;
         }
-        .team-wrapper {
+        .team-item-wrapper {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            .team-item-wrapper {
+            transition: all 0.3s ease-out 0s;
+            .team-item {
+                display: block;
+                width: 300px;
                 transition: all 0.3s ease-out 0s;
-                .team-item {
-                    display: block;
-                    width: 300px;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: auto;
+                    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+                }
+                .summary {
+                    padding-top: 30px;
                     transition: all 0.3s ease-out 0s;
-                    img {
-                        width: initial;
-                        height: initial;
+                    height: auto;
+                    .title {
+                        font-size: 20px;
                         transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
                     }
-                    .summary {
-                        padding-top: 30px;
+                    .subtitle {
+                        margin-bottom: 20px;
+                    }
+                    .description {
+                        color: #fff;
+                        overflow: hidden;
+                        height: 0;
+                        line-height: 24px;
                         transition: all 0.3s ease-out 0s;
-                        height: auto;
+                    }
+                }
+                &:hover {
+                    box-shadow: 0 12px 10px rgba(0, 0, 0, 0.1);
+                    background: #383838;
+                    img {
+                        margin-top: -25px;
+                    }
+                    .summary {
+                        background: #383838;
+                        height: 147px;
+                        color: #fff;
+                        margin-top: -60px;
                         .title {
-                            font-size: 20px;
-                            transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-                        }
-                        .subtitle {
-                            margin-bottom: 20px;
+                            color: #fff;
                         }
                         .description {
-                            color: #fff;
-                            overflow: hidden;
-                            height: 0;
-                            line-height: 24px;
-                            transition: all 0.3s ease-out 0s;
-                        }
-                    }
-                    &:hover {
-                        box-shadow: 0 12px 10px rgba(0, 0, 0, 0.1);
-                        background: #383838;
-                        img {
-                            margin-top: -25px;
-                        }
-                        .summary {
-                            background: #383838;
-                            height: 147px;
-                            color: #fff;
-                            margin-top: -60px;
-                            .title {
-                                color: #fff;
-                            }
-                            .description {
-                                height: auto;
-                            }
+                            height: auto;
                         }
                     }
                 }

@@ -1,5 +1,7 @@
 import AOS from 'aos/src/js/aos'
 import './index.scss'
+import 'purecss/build/pure-min.css'
+import 'purecss/build/grids-responsive-min.css'
 
 /* eslint-disable */
 window.isMobile = false //initiate as false
