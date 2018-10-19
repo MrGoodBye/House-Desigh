@@ -1,5 +1,6 @@
 import './index.scss'
 import './responsive.scss'
+import CONSTS from './consts'
 
 const isMobile = window.isMobile
 const $projectContainer = $('.project-container')
@@ -18,8 +19,8 @@ const items = images.map((image, i) => (`
             <img src=${image} alt="阿姆斯特丹RAI停车场大楼室内设计">
         </div>
         <div class="info">
-            <p class="title">太阳之屋/ Keivani Architects</p>
-            <p class="subtitle">室内设计</p>
+            <p class="title">${CONSTS[i + 1].title}</p>
+            <p class="subtitle">${CONSTS[i + 1].subtitle}</p>
         </div>
     </a>
 `))
