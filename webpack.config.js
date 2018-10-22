@@ -4,14 +4,18 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const pkg = require('./package.json');
 
 const IS_DEV = process.env.NODE_ENV === 'dev';
 
 const config = {
   mode: IS_DEV ? 'development' : 'production',
   devtool: IS_DEV ? 'eval' : 'source-map',
-  entry: './src/index.js',
+  entry: {
+    app: './src/index.js',
+    about: './src/about/index.js',
+    vendor: Object.keys(pkg.dependencies),
+  },
   output: {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),
@@ -120,12 +124,23 @@ const config = {
     ]),
     new HtmlWebPackPlugin({
       template: 'index.html',
-      favicon: './public/icon.ico',
       minify: !IS_DEV && {
         collapseWhitespace: true,
         preserveLineBreaks: true,
         removeComments: true,
       },
+      chunks: ['vendor', 'runtime', 'app'],
+      filename: 'index.html'
+    }),
+    new HtmlWebPackPlugin({
+      template: 'index.html',
+      minify: !IS_DEV && {
+        collapseWhitespace: true,
+        preserveLineBreaks: true,
+        removeComments: true,
+      },
+      chunks: ['vendor', 'runtime', 'about'],
+      filename: 'about.html'
     }),
     new ExtractTextPlugin({
       filename: "style.css",

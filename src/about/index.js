@@ -29,5 +29,6 @@ $('.about-wrapper').html(() => (`
             这座由著名设计师Louis Christian Mullgardt设计，始建于1916年的Harbor House以其无可复制的后花园海景、古朴大气的建筑风格、精美的红木艺术，被誉为美国20世纪初 ...
             </p>
         </article>
+        <a class="more" href="about.html">More</a>
     </div>
 `))

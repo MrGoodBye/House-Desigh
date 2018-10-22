@@ -1,7 +1,4 @@
-import AOS from 'aos/src/js/aos'
 import './index.scss'
-import 'purecss/build/pure-min.css'
-import 'purecss/build/grids-responsive-min.css'
 
 /* eslint-disable */
 window.isMobile = false //initiate as false
@@ -18,6 +15,3 @@ if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elain
 }
 /* eslint-enable */
 
-$(function () {
-    AOS.init()
-})
