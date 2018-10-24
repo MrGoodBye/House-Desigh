@@ -1,0 +1,48 @@
+@import '../mixin.scss';
+.detail {
+    overflow-y: auto;
+}
+.content {
+    padding: 0 50px;
+}
+.bg {
+    width: 100%;
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+    line-height: 24px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.common-header {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.count-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.description {
+    margin-top: 60px;
+}
+
+@include breakpoint(tablet) {
+    .content {
+        padding: 0 150px;
+    }
+
+    .text-center {
+        color: #6a6a6a;
+    }
+    
+    .bg {
+        display: block;
+    }
+}

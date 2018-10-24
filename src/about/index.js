@@ -1,7 +1,8 @@
 import './index.scss'
 
 const isMobile = window.isMobile
-const images = window.importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/))
+const importAll = r => r.keys().map(r)
+const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/))
 
 $('.about-wrapper').html(() => (`
     <div class="left">

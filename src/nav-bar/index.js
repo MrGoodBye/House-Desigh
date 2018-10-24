@@ -1,4 +1,6 @@
 import './index.scss'
+import 'purecss/build/pure-min.css'
+import 'purecss/build/grids-responsive-min.css'
 
 (function (window, document) {
     var menu = document.getElementById('menu'),

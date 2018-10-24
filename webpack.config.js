@@ -13,7 +13,7 @@ const config = {
   devtool: IS_DEV ? 'eval' : 'source-map',
   entry: {
     app: './src/index.js',
-    about: './src/about/index.js',
+    about: './src/about/detail.js',
     vendor: Object.keys(pkg.dependencies),
   },
   output: {
@@ -133,7 +133,7 @@ const config = {
       filename: 'index.html'
     }),
     new HtmlWebPackPlugin({
-      template: 'index.html',
+      template: './src/about/detail.html',
       minify: !IS_DEV && {
         collapseWhitespace: true,
         preserveLineBreaks: true,
