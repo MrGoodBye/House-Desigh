@@ -1,0 +1,13 @@
+@import '../mixin.scss';
+.detail {
+    overflow-y: hidden;
+    .bg {
+        width: 100%;
+        display: none;
+    }
+    @include breakpoint(tablet) {
+        .bg {
+            display: block;
+        }
+    }
+}

@@ -14,6 +14,7 @@ const config = {
   entry: {
     app: './src/index.js',
     about: './src/about/detail.js',
+    project: './src/project/detail.js',
     vendor: Object.keys(pkg.dependencies),
   },
   output: {
@@ -133,7 +134,7 @@ const config = {
       filename: 'index.html'
     }),
     new HtmlWebPackPlugin({
-      template: './src/about/detail.html',
+      template: './src/detail-template/detail.html',
       minify: !IS_DEV && {
         collapseWhitespace: true,
         preserveLineBreaks: true,
@@ -141,6 +142,16 @@ const config = {
       },
       chunks: ['vendor', 'runtime', 'about'],
       filename: 'about.html'
+    }),
+    new HtmlWebPackPlugin({
+      template: './src/detail-template/detail.html',
+      minify: !IS_DEV && {
+        collapseWhitespace: true,
+        preserveLineBreaks: true,
+        removeComments: true,
+      },
+      chunks: ['vendor', 'runtime', 'project'],
+      filename: 'project.html'
     }),
     new ExtractTextPlugin({
       filename: "style.css",

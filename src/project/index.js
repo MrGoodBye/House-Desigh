@@ -1,29 +1,9 @@
 import './index.scss'
 import './responsive.scss'
-import CONSTS from './consts'
+import {items} from './items'
 
 const isMobile = window.isMobile
 const $projectContainer = $('.project-container')
-const images = window.importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/))
-
-const items = images.map((image, i) => (`
-    <a 
-        class="project-item"
-        data-aos=${isMobile ? "fade-in" : "fade-up"}
-        data-aos-delay=${i * 100}
-        data-aos-duration="200"
-        data-aos-once=${isMobile}
-        target="_blank"
-    >
-        <div class="img-wrapper">
-            <img src=${image} alt="阿姆斯特丹RAI停车场大楼室内设计">
-        </div>
-        <div class="info">
-            <p class="title">${CONSTS[i + 1].title}</p>
-            <p class="subtitle">${CONSTS[i + 1].subtitle}</p>
-        </div>
-    </a>
-`))
 
 $projectContainer.html(items)
 !isMobile && $projectContainer.slick({

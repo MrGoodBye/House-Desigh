@@ -1,13 +1,6 @@
 @import '../mixin.scss';
-.detail {
-    overflow-y: auto;
-}
 .content {
     padding: 0 50px;
-}
-.bg {
-    width: 100%;
-    display: none;
 }
 
 .text-center {
@@ -40,9 +33,5 @@
 
     .text-center {
         color: #6a6a6a;
-    }
-    
-    .bg {
-        display: block;
     }
 }

@@ -1,6 +1,6 @@
 import '../nav-bar/'
-import './index'
 import './detail.scss'
+import '../detail-template/detail.scss'
 import bg from './detail.jpg'
 import count from './detail-2.jpg'
 
