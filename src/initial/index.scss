@@ -90,3 +90,25 @@ img {
         }
     }
 }
+
+
+.more {
+    width: 60%;
+    margin: 35px auto 40px auto;
+    line-height: 40px;
+    height: 40px;
+    border-radius: 0px;
+    text-align: center;
+    text-indent: 0px;
+    display: block;
+    font-family: "HELVETICANEUELTPRO-THEX";
+    background-color: #383838;
+    border: #383838 1px solid;
+    color: #fff;
+    font-size: 16px;
+    @include breakpoint(tablet) {
+        margin-top: 4%;
+        margin-left: 0;
+        width: 120px;
+    }
+}
