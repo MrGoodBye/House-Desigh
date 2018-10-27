@@ -1,0 +1,91 @@
+@import '../mixin.scss';
+.detail {
+    margin-top: 60px;
+    padding: 0 40px;
+    .header {
+        line-height: 24px;
+        font-size: 13px;
+        .title {
+            font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 60px;
+            border-bottom: 1px dotted rgb(211, 211, 211);
+        }
+        .subtitle {
+            display: flex;
+            justify-content: center;
+            font-family: 微软雅黑, 'Microsoft YaHei';
+            padding-top: 20px;
+            color: #aaa;
+            line-height: 2em;
+        }
+        .description {
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            color: #aaa;
+        }
+    }
+    .detail-items,
+    .detail-items-single {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding-top: 30px;
+        .item {
+            img {
+                width: 100%;
+            }
+            .description {
+                font-family: 微软雅黑, 'Microsoft YaHei';
+                word-wrap: break-word;
+                word-break: normal;
+                line-height: 24px;
+                font-size: 13px;
+                color: #6a6a6a;
+                &>* {
+                    text-overflow: pre-wrap;
+                }
+                .title {
+                    color: rgb(38, 38, 38);
+                    font-size: 16px;
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+    .detail-items-single {
+        justify-content: center;
+    }
+    @include breakpoint(tablet) {
+        margin-top: 120px;
+        padding: 0 300px;
+        .header {
+            .title {
+                font-size: 22px;
+                color: #444;
+            }
+            .subtitle {
+                font-size: 18px;
+            }
+            .description {
+                color: #777;
+                font-size: 14px;
+            }
+        }
+        .detail-items,
+        .detail-items-single {
+            flex-direction: row;
+            .item {
+                width: 360px;
+            }
+        }
+        .detail-items-single {
+            .item {
+                width: 80%;
+            }
+        }
+    }
+}

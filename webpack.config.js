@@ -15,6 +15,7 @@ const config = {
     app: './src/index.js',
     about: './src/about/detail.js',
     project: './src/project/detail.js',
+    service: './src/service/detail.js',
     vendor: Object.keys(pkg.dependencies),
   },
   output: {
@@ -152,6 +153,16 @@ const config = {
       },
       chunks: ['vendor', 'runtime', 'project'],
       filename: 'project.html'
+    }),
+    new HtmlWebPackPlugin({
+      template: './src/detail-template/detail.html',
+      minify: !IS_DEV && {
+        collapseWhitespace: true,
+        preserveLineBreaks: true,
+        removeComments: true,
+      },
+      chunks: ['vendor', 'runtime', 'service'],
+      filename: 'service.html'
     }),
     new ExtractTextPlugin({
       filename: "style.css",

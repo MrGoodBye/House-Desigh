@@ -5,18 +5,19 @@ const isMobile = window.isMobile
 const $serviceContainer = $('.service-item-wrapper')
 const images = window.importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/))
 $serviceContainer.html(() => images.map((image, i) => `
-    <div
+    <a
         class="service-item"
         data-aos=${isMobile ? "fade-in" : "fade-up"}
         data-aos-delay=${i * 100}
         data-aos-once=${isMobile}
+        href="service.html?id=${i}"
     >
         <img src=${image} alt=${CONSTS[i].title}>
         <div class="service_info">
             <p class="title">${CONSTS[i].title}</p>
             <p class="description">${CONSTS[i].description}</p>
         </div>
-    </div>
+    </a>
 `))
 $serviceContainer.slick({
     infinite: true,
