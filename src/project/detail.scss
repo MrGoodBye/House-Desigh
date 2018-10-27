@@ -8,6 +8,13 @@
         align-items: center;
     }
     @include breakpoint(tablet) {
+        .detail-items {
+            max-height: 90vh;
+            .slick-track {
+                display: flex;
+                align-items: center;
+            }
+        }
 
     }
 }

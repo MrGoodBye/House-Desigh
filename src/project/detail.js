@@ -12,11 +12,19 @@ const importAll = r => r.keys().map(r)
 let images = []
 switch (id) {
     case '0': images = importAll(require.context('./images-detail/0', false, /\.(png|jpe?g|svg)$/))
-        break;
+        break
     case '1': images = importAll(require.context('./images-detail/1', false, /\.(png|jpe?g|svg)$/))
-        break;
+        break
     case '2': images = importAll(require.context('./images-detail/2', false, /\.(png|jpe?g|svg)$/))
-        break;
+        break
+    case '3': images = importAll(require.context('./images-detail/3', false, /\.(png|jpe?g|svg)$/))
+        break
+    case '4': images = importAll(require.context('./images-detail/4', false, /\.(png|jpe?g|svg)$/))
+        break
+    case '5': images = importAll(require.context('./images-detail/5', false, /\.(png|jpe?g|svg)$/))
+        break
+    default: images = importAll(require.context('./images-detail/0', false, /\.(png|jpe?g|svg)$/))
+        break
 }
 
 
