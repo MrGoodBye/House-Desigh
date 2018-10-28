@@ -11,8 +11,7 @@ $('.team-item-wrapper').html(() => images.map((image, i) => `
         data-aos=${isMobile ? "fade-in" : "fade-up"}
         data-aos-delay=${i * 100}
         data-aos-once=${isMobile}
-        target="_blank"
-        href=${CONSTS[i].content}
+        href="team.html?id=${i}"
     >
         <img src=${image} alt=${CONSTS[i].title}>
         <div class="summary">
