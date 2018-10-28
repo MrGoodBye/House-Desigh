@@ -10,8 +10,7 @@ $('.news-item-wrapper').html(() => images.map((image, i) => `
         data-aos=${isMobile ? "fade-in" : "fade-up"}
         data-aos-delay=${i * 100}
         data-aos-once=${isMobile}
-        target="_blank"
-        href=${CONSTS[i].content}
+        href="news.html?id=${i}"
     >
         <p class="date">${CONSTS[i].date}</p>
         <p class="title">${CONSTS[i].title}</p>

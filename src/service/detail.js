@@ -37,4 +37,4 @@ $('.detail').html(() => (`
         <div class="description">${CONSTS[id].detail.description}</div>
     </div>
     <div class=${id % 2 ? 'detail-items-single' : 'detail-items'}>${items}</div>
-`))
+`).replace(/,/g, ''))

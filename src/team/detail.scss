@@ -1,0 +1,43 @@
+@import '../mixin.scss';
+.detail {
+    margin-top: 60px;
+    padding: 0 20px;
+    .img-wrapper {
+        width: 90vw;
+        img {
+            width: 100%;
+        }
+    }
+    .content {
+        .items {
+            .item {
+                padding-top: 40px;
+                line-height: 24px;
+                font-size: 13px;
+                color: #6a6a6a;
+            }
+        }
+    }
+    @include breakpoint(tablet) {
+        margin-top: 120px;
+        padding: 0 80px;
+        display: flex;
+        align-items: flex-start;
+        .img-wrapper {
+            width: 408px;
+            margin-right: 30px;
+        }
+        .content {
+            .common-header {
+                .title {
+                    color: #343434;
+                    font-size: 30px;
+                }
+                .subtitle {
+                    color: #626262;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

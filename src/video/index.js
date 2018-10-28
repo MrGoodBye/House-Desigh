@@ -1,6 +1,5 @@
 import './index.scss'
 import CONSTS from './consts'
-import video from './1509003187978.mp4'
 
 const isMobile = window.isMobile
 const $videoContainer = $('.video-item-wrapper')
@@ -12,7 +11,7 @@ $videoContainer.html(() => images.map((image, i) => `
         data-aos-delay=${i * 100}
         data-aos-once=${isMobile}
     >
-        <a class="image-wrapper" href=${video} target="_blank">
+        <a class="image-wrapper" href="video.html">
             <img src=${image} alt=${CONSTS[i].title}>
         </a>
         <div class="item-info-wrapper">

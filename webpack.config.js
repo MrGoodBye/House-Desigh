@@ -16,6 +16,9 @@ const config = {
     about: './src/about/detail.js',
     project: './src/project/detail.js',
     service: './src/service/detail.js',
+    video: './src/video/detail.js',
+    news: './src/news/detail.js',
+    team: './src/team/detail.js',
     vendor: Object.keys(pkg.dependencies),
   },
   output: {
@@ -163,6 +166,36 @@ const config = {
       },
       chunks: ['vendor', 'runtime', 'service'],
       filename: 'service.html'
+    }),
+    new HtmlWebPackPlugin({
+      template: './src/detail-template/detail.html',
+      minify: !IS_DEV && {
+        collapseWhitespace: true,
+        preserveLineBreaks: true,
+        removeComments: true,
+      },
+      chunks: ['vendor', 'runtime', 'video'],
+      filename: 'video.html'
+    }),
+    new HtmlWebPackPlugin({
+      template: './src/detail-template/detail.html',
+      minify: !IS_DEV && {
+        collapseWhitespace: true,
+        preserveLineBreaks: true,
+        removeComments: true,
+      },
+      chunks: ['vendor', 'runtime', 'news'],
+      filename: 'news.html'
+    }),
+    new HtmlWebPackPlugin({
+      template: './src/detail-template/detail.html',
+      minify: !IS_DEV && {
+        collapseWhitespace: true,
+        preserveLineBreaks: true,
+        removeComments: true,
+      },
+      chunks: ['vendor', 'runtime', 'team'],
+      filename: 'team.html'
     }),
     new ExtractTextPlugin({
       filename: "style.css",
